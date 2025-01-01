@@ -5,6 +5,8 @@ import com.shreyash.github.dagger2sampleproject.MyApplication
 import com.shreyash.github.dagger2sampleproject.data.local.FileStorageService
 import com.shreyash.github.dagger2sampleproject.data.remote.HttpClient
 import com.shreyash.github.dagger2sampleproject.di.ApplicationContext
+import com.shreyash.github.dagger2sampleproject.di.DatabaseName
+import com.shreyash.github.dagger2sampleproject.di.DatabaseVersion
 import com.shreyash.github.dagger2sampleproject.di.NetworkApiKey
 import dagger.Module
 import dagger.Provides
@@ -24,6 +26,14 @@ class ApplicationModule (private val application: MyApplication) {
     fun provideHttpClient(): HttpClient {
         return HttpClient()
     }
+
+    @Provides
+    @DatabaseName
+    fun provideDatabaseName(): String = "dummy_db"
+
+    @Provides
+    @DatabaseVersion
+    fun provideDatabaseVersion(): Int = 1
 
     @Provides
     @NetworkApiKey

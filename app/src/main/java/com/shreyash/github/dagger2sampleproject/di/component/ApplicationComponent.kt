@@ -2,6 +2,7 @@ package me.amitshekhar.dagger.learning.di.component
 
 import android.content.Context
 import com.shreyash.github.dagger2sampleproject.MyApplication
+import com.shreyash.github.dagger2sampleproject.data.local.DatabaseService
 import com.shreyash.github.dagger2sampleproject.data.local.FileStorageService
 import com.shreyash.github.dagger2sampleproject.data.remote.NetworkService
 import com.shreyash.github.dagger2sampleproject.di.ApplicationContext
@@ -20,7 +21,7 @@ interface ApplicationComponent {
 
     fun getNetworkService(): NetworkService
 
-   // fun getDatabaseService(): DatabaseService
+    fun getDatabaseService(): DatabaseService
 
     fun getFileStorageService(): FileStorageService
 
